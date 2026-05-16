@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sas/main/json-schema/sas-viya-rest-api-decision-schema.json",
+  "title": "SAS Viya Decision",
+  "description": "A versioned decision flow managed by the SAS Decisions service.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "majorRevision": { "type": "integer" },
+    "minorRevision": { "type": "integer" },
+    "subjectId": { "type": "string" },
+    "createdBy": { "type": "string" },
+    "creationTimeStamp": { "type": "string", "format": "date-time" },
+    "modifiedTimeStamp": { "type": "string", "format": "date-time" },
+    "signature": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "dataType": { "type": "string" },
+          "direction": { "type": "string", "enum": ["input", "output", "both"] }
+        }
+      }
+    }
+  }
+}

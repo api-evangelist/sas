@@ -1,0 +1,10 @@
+{
+  "id": "8e7c0a5b-4d6b-4c40-9c1c-aebd7d3d2a11",
+  "name": "Customer Retention Dashboard",
+  "description": "Visual Analytics report tracking quarterly churn KPIs",
+  "createdBy": "analyst1",
+  "modifiedBy": "analyst1",
+  "creationTimeStamp": "2026-01-12T10:32:00Z",
+  "modifiedTimeStamp": "2026-05-12T14:11:09Z",
+  "version": 14
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sas/main/json-schema/sas-viya-rest-api-report-schema.json",
+  "title": "SAS Viya Report",
+  "description": "A SAS Visual Analytics report resource exposed via the Reports REST API.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier of the report." },
+    "name": { "type": "string", "description": "Display name of the report." },
+    "description": { "type": "string" },
+    "createdBy": { "type": "string" },
+    "modifiedBy": { "type": "string" },
+    "creationTimeStamp": { "type": "string", "format": "date-time" },
+    "modifiedTimeStamp": { "type": "string", "format": "date-time" },
+    "version": { "type": "integer" }
+  }
+}

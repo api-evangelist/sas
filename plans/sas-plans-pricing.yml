@@ -1,0 +1,37 @@
+apiCommonsPlansVersion: '0.1'
+provider: sas
+name: SAS Viya Commercial Plans
+description: >-
+  SAS Viya is sold as a subscription-based analytics platform with cloud and
+  on-premises deployment models. Specific pricing is quoted directly by SAS;
+  the platform is offered as packaged software and as managed SAS Viya cloud
+  subscriptions. A 14-day free trial is publicly available.
+plans:
+  - id: trial
+    name: SAS Viya Free Trial
+    description: 14-day trial of SAS Viya in the SAS-managed cloud environment
+    pricing:
+      model: free
+      currency: USD
+      amount: 0
+    quotas:
+      duration: 14 days
+    notes: Limited evaluation tier intended for hands-on exploration of Viya
+  - id: viya-subscription
+    name: SAS Viya Subscription
+    description: Subscription license to SAS Viya, deployable in SAS-managed cloud, customer cloud, or on premises
+    pricing:
+      model: subscription
+      currency: USD
+      amount: contact-sales
+    notes: Pricing is negotiated and depends on deployment, workload, and analytics packages
+  - id: customer-intelligence-360
+    name: SAS Customer Intelligence 360
+    description: SaaS subscription for customer journey orchestration and event collection
+    pricing:
+      model: subscription
+      currency: USD
+      amount: contact-sales
+references:
+  - https://www.sas.com/en_us/software/viya.html
+  - https://developer.sas.com/

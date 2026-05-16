@@ -1,0 +1,34 @@
+vocabulary: sas
+description: Operational and conceptual vocabulary for SAS Viya REST APIs
+terms:
+  - term: CAS
+    definition: SAS Cloud Analytic Services, the in-memory analytic engine of SAS Viya
+    relations:
+      - schema:DefinedTerm
+  - term: Compute
+    definition: SAS Viya compute service that executes SAS code via REST
+  - term: Model Repository
+    definition: Catalog of registered models tracked by SAS Model Manager
+  - term: Decision Flow
+    definition: Versioned, executable decision logic combining business rules and models
+  - term: Business Rule
+    definition: Author-time rule expression executed inside a decision or rule set
+  - term: Job Definition
+    definition: Reusable specification of a SAS job executed by the Job Execution service
+  - term: Visual Analytics Report
+    definition: A SAS Visual Analytics report consumed via the Reports REST API
+  - term: Identity
+    definition: A user or group entity managed by the SAS Logon and Identities services
+  - term: Authorization Rule
+    definition: A grant statement controlling access to SAS Viya resources
+  - term: Event Stream
+    definition: A streaming analytic deployment managed by SAS Event Stream Manager
+  - term: SAS Logon
+    definition: OAuth 2.0 authorization server issuing access tokens for Viya
+  - term: SAS Viya Order
+    definition: A licensed SAS Viya entitlement managed via the Viya Orders API
+dimensions:
+  - name: capability
+    values: [Analytics, Decisioning, Reporting, Governance, Streaming]
+  - name: domain
+    values: [Fraud, Risk, HealthAndLifeSciences, CustomerIntelligence, IoT]

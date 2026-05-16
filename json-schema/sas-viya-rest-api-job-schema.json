@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sas/main/json-schema/sas-viya-rest-api-job-schema.json",
+  "title": "SAS Viya Job",
+  "description": "A job representing an asynchronous SAS Viya execution managed by the Job Execution service.",
+  "type": "object",
+  "required": ["id", "name", "state"],
+  "properties": {
+    "id": { "type": "string", "description": "The unique identifier of the job." },
+    "name": { "type": "string", "description": "Display name of the job." },
+    "state": {
+      "type": "string",
+      "enum": ["pending", "running", "completed", "failed", "canceled"],
+      "description": "Lifecycle state of the job."
+    },
+    "jobDefinitionUri": { "type": "string", "description": "URI of the job definition driving this job." },
+    "createdBy": { "type": "string", "description": "Identity that submitted the job." },
+    "creationTimeStamp": { "type": "string", "format": "date-time" },
+    "endTimeStamp": { "type": "string", "format": "date-time" },
+    "results": {
+      "type": "object",
+      "description": "Job result payload, structure depends on the job definition.",
+      "additionalProperties": true
+    }
+  }
+}

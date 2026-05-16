@@ -1,0 +1,19 @@
+apiCommonsRateLimitsVersion: '0.1'
+provider: sas
+name: SAS Viya Rate Limits
+description: >-
+  SAS Viya REST APIs do not publish global per-key rate limits; concurrency
+  and request rates are bounded by the deployment topology of the customer's
+  Viya environment (CAS nodes, compute servers, and Kubernetes resources).
+limits:
+  - scope: deployment
+    policy: deployment-scaled
+    description: >-
+      Throughput is governed by allocated compute, CAS workers, and
+      Kubernetes resources. There is no published per-token rate ceiling.
+  - scope: oauth-token
+    policy: token-expiry
+    description: SAS Logon tokens expire and must be refreshed; expiration is configurable per deployment
+references:
+  - https://developer.sas.com/apis/rest/
+  - https://developer.sas.com/guides/get-started-rest-apis.html

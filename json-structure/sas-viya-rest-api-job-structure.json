@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/draft-1/schema",
+  "name": "SAS Viya Job Structure",
+  "description": "JSON Structure describing the canonical fields, types, and lifecycle states of a SAS Viya job resource.",
+  "structure": {
+    "id": { "type": "string", "required": true },
+    "name": { "type": "string", "required": true },
+    "state": { "type": "string", "enum": ["pending", "running", "completed", "failed", "canceled"], "required": true },
+    "jobDefinitionUri": { "type": "string" },
+    "createdBy": { "type": "string" },
+    "creationTimeStamp": { "type": "datetime" },
+    "endTimeStamp": { "type": "datetime" },
+    "results": { "type": "object" }
+  }
+}

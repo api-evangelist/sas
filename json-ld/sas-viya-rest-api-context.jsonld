@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://developer.sas.com/vocab/",
+    "schema": "https://schema.org/",
+    "sas": "https://developer.sas.com/vocab/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "id": "@id",
+    "createdBy": "schema:creator",
+    "creationTimeStamp": "schema:dateCreated",
+    "modifiedTimeStamp": "schema:dateModified",
+    "Job": "sas:Job",
+    "Report": "sas:Report",
+    "Decision": "sas:Decision",
+    "User": "schema:Person",
+    "state": "sas:state",
+    "version": "schema:version"
+  }
+}

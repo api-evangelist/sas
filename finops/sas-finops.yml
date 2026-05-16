@@ -1,0 +1,24 @@
+finopsFrameworkVersion: '2024'
+focusSpecVersion: '1.0'
+provider: sas
+name: SAS Viya FinOps Profile
+description: >-
+  SAS Viya is offered as an enterprise subscription rather than usage-metered
+  pay-as-you-go. FinOps practitioners typically allocate Viya cost as fixed
+  subscription with cloud-infrastructure overlay when deployed on AWS, Azure,
+  or GCP.
+costModel:
+  primary: subscription
+  secondary: cloud-infrastructure-pass-through
+billingDimensions:
+  - dimension: subscription-term
+    description: Annual or multi-year subscription fee
+  - dimension: cloud-infrastructure
+    description: Underlying compute, storage, and networking when self-managed on hyperscaler
+  - dimension: support-tier
+    description: Support and professional services subscriptions
+allocation:
+  - method: tag-based
+    description: Tag Kubernetes namespaces or cloud resources with SAS deployment identifiers
+references:
+  - https://www.sas.com/en_us/software/viya.html

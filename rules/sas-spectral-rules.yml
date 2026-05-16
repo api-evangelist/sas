@@ -1,0 +1,41 @@
+extends: [[spectral:oas, all]]
+rules:
+  sas-tags-title-case:
+    description: Tags should be in Title Case (e.g., Decisions, Reports)
+    given: $.tags[*].name
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: '^([A-Z][a-zA-Z0-9]*)( [A-Z][a-zA-Z0-9]*)*$'
+  sas-operation-id-camel-case:
+    description: operationId should be camelCase
+    given: $.paths.*.*.operationId
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-zA-Z0-9]+$'
+  sas-summary-title-case:
+    description: Operation summaries should use Title Case
+    given: $.paths.*.*.summary
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[A-Z]'
+  sas-oauth-required:
+    description: Operations should be secured via OAuth via SAS Logon
+    given: $.paths.*.*
+    severity: warn
+    then:
+      field: security
+      function: truthy
+  sas-vendor-media-type:
+    description: SAS Viya uses application/vnd.sas.* vendor media types for resources
+    given: $.paths.*.*.responses.*.content
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: 'application/vnd\\.sas\\.'
