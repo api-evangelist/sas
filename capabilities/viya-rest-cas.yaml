@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — CAS
+  description: 'SAS Viya REST API — CAS. 1 operations. Lead operation: List CAS Servers. Self-contained Naftiko capability
+    covering one Sas business surface.'
+  tags:
+  - Sas
+  - CAS
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-cas
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — CAS business capability. Self-contained, no shared references.
+    resources:
+    - name: casManagement-servers
+      path: /casManagement/servers
+      operations:
+      - name: listcasservers
+        method: GET
+        description: List CAS Servers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-cas-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — CAS. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/casmanagement/servers
+      name: casmanagement-servers
+      description: REST surface for casManagement-servers.
+      operations:
+      - method: GET
+        name: listcasservers
+        description: List CAS Servers
+        call: viya-rest-cas.listcasservers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-cas-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — CAS. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-cas-servers
+      description: List CAS Servers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-cas.listcasservers
+      outputParameters:
+      - type: object
+        mapping: $.

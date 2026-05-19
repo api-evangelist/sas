@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — Folders
+  description: 'SAS Viya REST API — Folders. 1 operations. Lead operation: List Folders. Self-contained Naftiko capability
+    covering one Sas business surface.'
+  tags:
+  - Sas
+  - Folders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-folders
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — Folders business capability. Self-contained, no shared references.
+    resources:
+    - name: folders-folders
+      path: /folders/folders
+      operations:
+      - name: listfolders
+        method: GET
+        description: List Folders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-folders-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — Folders. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/folders/folders
+      name: folders-folders
+      description: REST surface for folders-folders.
+      operations:
+      - method: GET
+        name: listfolders
+        description: List Folders
+        call: viya-rest-folders.listfolders
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-folders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — Folders. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-folders
+      description: List Folders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-folders.listfolders
+      outputParameters:
+      - type: object
+        mapping: $.

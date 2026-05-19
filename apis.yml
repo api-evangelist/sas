@@ -4,124 +4,138 @@ name: SAS Institute
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Analytics
-  - Data Management
-  - Artificial Intelligence
-  - Machine Learning
-  - Software
-description: >-
-  SAS Institute is a global leader in analytics, AI, and data management
-  software. SAS Viya, its cloud-native platform, exposes a comprehensive
-  catalog of REST APIs covering data management, machine learning, decisions,
-  reports, identities, and platform administration. The Viya REST API surface
-  enables embedding analytics, automating model lifecycles, and integrating
+- Analytics
+- Data Management
+- Artificial Intelligence
+- Machine Learning
+- Software
+description: SAS Institute is a global leader in analytics, AI, and data management software. SAS Viya, its cloud-native platform,
+  exposes a comprehensive catalog of REST APIs covering data management, machine learning, decisions, reports, identities,
+  and platform administration. The Viya REST API surface enables embedding analytics, automating model lifecycles, and integrating
   governed AI into business workflows.
 created: '2026-05-05'
-modified: '2026-05-16'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: sas:viya-rest-api
-    name: SAS Viya REST API
-    tags:
-      - Analytics
-      - Machine Learning
-      - Data Management
-      - Decisions
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.sas.com/apis/rest/
-    properties:
-      - url: https://developer.sas.com/apis/rest/
-        type: Documentation
-      - url: https://developer.sas.com/rest-apis
-        type: APICatalog
-      - url: https://developer.sas.com/sdk/
-        type: SDK
-      - url: openapi/sas-viya-rest-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/sas-viya-rest-api-job-schema.json
-        type: JSONSchema
-      - url: json-schema/sas-viya-rest-api-report-schema.json
-        type: JSONSchema
-      - url: json-schema/sas-viya-rest-api-decision-schema.json
-        type: JSONSchema
-      - url: json-ld/sas-viya-rest-api-context.jsonld
-        type: JSONLD
-    description: >-
-      The SAS Viya REST API spans 50+ endpoint groups covering Cloud Analytic
-      Services (CAS), Compute, Data Management (Data Sources, Data Tables,
-      Data Quality), Model Management, Decisions, Business Rules, Reports,
-      Visual Analytics, Identities, Authorization, Files, Folders, Jobs, and
-      Logon (OAuth). Together they let developers automate SAS Viya analytic
-      workloads, publish models, embed reports, and govern AI lifecycles.
-common:
-  - type: Website
-    url: https://www.sas.com/
-  - type: DeveloperPortal
-    url: https://developer.sas.com/
-  - type: Documentation
-    url: https://developer.sas.com/apis/rest/
-  - type: APICatalog
-    url: https://developer.sas.com/rest-apis
-  - type: SDK
-    url: https://developer.sas.com/sdk/
-  - type: GettingStarted
-    url: https://developer.sas.com/guides/get-started-rest-apis.html
-  - type: SpectralRules
-    url: rules/sas-spectral-rules.yml
+- aid: sas:viya-rest-api
+  name: SAS Viya REST API
+  tags:
+  - Analytics
+  - Machine Learning
+  - Data Management
+  - Decisions
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.sas.com/apis/rest/
+  properties:
+  - url: https://developer.sas.com/apis/rest/
+    type: Documentation
+  - url: https://developer.sas.com/rest-apis
+    type: APICatalog
+  - url: https://developer.sas.com/sdk/
+    type: SDK
+  - url: openapi/sas-viya-rest-api-openapi.yml
+    type: OpenAPI
+  - url: json-schema/sas-viya-rest-api-job-schema.json
+    type: JSONSchema
+  - url: json-schema/sas-viya-rest-api-report-schema.json
+    type: JSONSchema
+  - url: json-schema/sas-viya-rest-api-decision-schema.json
+    type: JSONSchema
+  - url: json-ld/sas-viya-rest-api-context.jsonld
+    type: JSONLD
   - type: NaftikoCapability
-    url: capabilities/sas-analytics-platform.yaml
-  - type: Vocabulary
-    url: vocabulary/sas-vocabulary.yml
-  - type: Features
-    data:
-      - name: Cloud Analytic Services (CAS)
-        description: REST access to in-memory CAS server for high-performance analytics on large datasets
-      - name: Model Management
-        description: Register, monitor, compare, and govern machine learning model lifecycles
-      - name: Decisions and Business Rules
-        description: Author, version, and execute decision flows and business rule sets
-      - name: Reports and Visual Analytics
-        description: Create, read, update, and export SAS Visual Analytics reports
-      - name: Data Quality and Catalog
-        description: Manage data sources, tables, lineage, and quality rules with governance
-      - name: OAuth 2.0 via SAS Logon
-        description: Standard OAuth flows through the SAS Logon Manager for secure API access
-      - name: Real-Time Watchlist Screening
-        description: Screen parties and payments against illegal-activity watchlists in real time
-      - name: Event Stream Processing
-        description: Deploy and monitor streaming analytics through Event Stream Manager and Studio
-  - type: UseCases
-    data:
-      - name: Fraud Detection
-        description: Operationalize SAS Fraud and Compliance rules to score transactions in real time
-      - name: Embedded Analytics
-        description: Embed SAS Viya reports and insights into custom portals and applications
-      - name: MLOps Automation
-        description: Automate the model lifecycle from training to publish to monitoring via REST
-      - name: Risk Management
-        description: Score risk decisions and govern compliance through decisioning APIs
-      - name: Customer Intelligence
-        description: Drive marketing journeys with SAS Customer Intelligence 360 event collection
-      - name: Health and Life Sciences
-        description: Manage clinical jobs and clinical repository content via SAS Clinical APIs
-  - type: Integrations
-    data:
-      - name: Python and R
-        description: Open-source clients call SAS Viya REST APIs from Python and R workflows
-      - name: AWS, Azure, and GCP
-        description: Deploy SAS Viya on major cloud providers and integrate with native services
-      - name: Java
-        description: Java SDK and REST clients for embedding SAS analytics in enterprise apps
-      - name: JavaScript and Web Portals
-        description: SAS Viya SDK for JavaScript embeds dashboards and content in web apps
-      - name: Event Streams
-        description: Connect SAS Event Stream Processing to Kafka, MQTT, and IoT pipelines
-  - type: Plans
-    url: plans/sas-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/sas-rate-limits.yml
-  - type: FinOps
-    url: finops/sas-finops.yml
+    url: capabilities/viya-rest-businessrules.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-cas.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-decisions.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-files.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-folders.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-identities.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-jobs.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-logon.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-models.yaml
+  - type: NaftikoCapability
+    url: capabilities/viya-rest-reports.yaml
+  description: The SAS Viya REST API spans 50+ endpoint groups covering Cloud Analytic Services (CAS), Compute, Data Management
+    (Data Sources, Data Tables, Data Quality), Model Management, Decisions, Business Rules, Reports, Visual Analytics, Identities,
+    Authorization, Files, Folders, Jobs, and Logon (OAuth). Together they let developers automate SAS Viya analytic workloads,
+    publish models, embed reports, and govern AI lifecycles.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/sas
+- type: Website
+  url: https://www.sas.com/
+- type: DeveloperPortal
+  url: https://developer.sas.com/
+- type: Documentation
+  url: https://developer.sas.com/apis/rest/
+- type: APICatalog
+  url: https://developer.sas.com/rest-apis
+- type: SDK
+  url: https://developer.sas.com/sdk/
+- type: GettingStarted
+  url: https://developer.sas.com/guides/get-started-rest-apis.html
+- type: SpectralRules
+  url: rules/sas-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/sas-vocabulary.yml
+- type: Features
+  data:
+  - name: Cloud Analytic Services (CAS)
+    description: REST access to in-memory CAS server for high-performance analytics on large datasets
+  - name: Model Management
+    description: Register, monitor, compare, and govern machine learning model lifecycles
+  - name: Decisions and Business Rules
+    description: Author, version, and execute decision flows and business rule sets
+  - name: Reports and Visual Analytics
+    description: Create, read, update, and export SAS Visual Analytics reports
+  - name: Data Quality and Catalog
+    description: Manage data sources, tables, lineage, and quality rules with governance
+  - name: OAuth 2.0 via SAS Logon
+    description: Standard OAuth flows through the SAS Logon Manager for secure API access
+  - name: Real-Time Watchlist Screening
+    description: Screen parties and payments against illegal-activity watchlists in real time
+  - name: Event Stream Processing
+    description: Deploy and monitor streaming analytics through Event Stream Manager and Studio
+- type: UseCases
+  data:
+  - name: Fraud Detection
+    description: Operationalize SAS Fraud and Compliance rules to score transactions in real time
+  - name: Embedded Analytics
+    description: Embed SAS Viya reports and insights into custom portals and applications
+  - name: MLOps Automation
+    description: Automate the model lifecycle from training to publish to monitoring via REST
+  - name: Risk Management
+    description: Score risk decisions and govern compliance through decisioning APIs
+  - name: Customer Intelligence
+    description: Drive marketing journeys with SAS Customer Intelligence 360 event collection
+  - name: Health and Life Sciences
+    description: Manage clinical jobs and clinical repository content via SAS Clinical APIs
+- type: Integrations
+  data:
+  - name: Python and R
+    description: Open-source clients call SAS Viya REST APIs from Python and R workflows
+  - name: AWS, Azure, and GCP
+    description: Deploy SAS Viya on major cloud providers and integrate with native services
+  - name: Java
+    description: Java SDK and REST clients for embedding SAS analytics in enterprise apps
+  - name: JavaScript and Web Portals
+    description: SAS Viya SDK for JavaScript embeds dashboards and content in web apps
+  - name: Event Streams
+    description: Connect SAS Event Stream Processing to Kafka, MQTT, and IoT pipelines
+- type: Plans
+  url: plans/sas-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/sas-rate-limits.yml
+- type: FinOps
+  url: finops/sas-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

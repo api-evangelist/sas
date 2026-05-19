@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — BusinessRules
+  description: 'SAS Viya REST API — BusinessRules. 1 operations. Lead operation: List Rule Sets. Self-contained Naftiko capability
+    covering one Sas business surface.'
+  tags:
+  - Sas
+  - BusinessRules
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-businessrules
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — BusinessRules business capability. Self-contained, no shared references.
+    resources:
+    - name: businessRules-ruleSets
+      path: /businessRules/ruleSets
+      operations:
+      - name: listrulesets
+        method: GET
+        description: List Rule Sets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-businessrules-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — BusinessRules. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/businessrules/rulesets
+      name: businessrules-rulesets
+      description: REST surface for businessRules-ruleSets.
+      operations:
+      - method: GET
+        name: listrulesets
+        description: List Rule Sets
+        call: viya-rest-businessrules.listrulesets
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-businessrules-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — BusinessRules. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-rule-sets
+      description: List Rule Sets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-businessrules.listrulesets
+      outputParameters:
+      - type: object
+        mapping: $.

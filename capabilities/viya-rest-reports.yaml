@@ -1,0 +1,111 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — Reports
+  description: 'SAS Viya REST API — Reports. 2 operations. Lead operation: List Reports. Self-contained Naftiko capability
+    covering one Sas business surface.'
+  tags:
+  - Sas
+  - Reports
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-reports
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — Reports business capability. Self-contained, no shared references.
+    resources:
+    - name: reports-reports
+      path: /reports/reports
+      operations:
+      - name: listreports
+        method: GET
+        description: List Reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reports-reports-id
+      path: /reports/reports/{id}
+      operations:
+      - name: getreport
+        method: GET
+        description: Get Report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-reports-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — Reports. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/reports/reports
+      name: reports-reports
+      description: REST surface for reports-reports.
+      operations:
+      - method: GET
+        name: listreports
+        description: List Reports
+        call: viya-rest-reports.listreports
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/reports/reports/{id}
+      name: reports-reports-id
+      description: REST surface for reports-reports-id.
+      operations:
+      - method: GET
+        name: getreport
+        description: Get Report
+        call: viya-rest-reports.getreport
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-reports-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — Reports. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-reports
+      description: List Reports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-reports.listreports
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-report
+      description: Get Report
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-reports.getreport
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.

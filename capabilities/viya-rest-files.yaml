@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — Files
+  description: 'SAS Viya REST API — Files. 1 operations. Lead operation: Upload File. Self-contained Naftiko capability covering
+    one Sas business surface.'
+  tags:
+  - Sas
+  - Files
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-files
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — Files business capability. Self-contained, no shared references.
+    resources:
+    - name: files-files
+      path: /files/files
+      operations:
+      - name: uploadfile
+        method: POST
+        description: Upload File
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-files-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — Files. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/files/files
+      name: files-files
+      description: REST surface for files-files.
+      operations:
+      - method: POST
+        name: uploadfile
+        description: Upload File
+        call: viya-rest-files.uploadfile
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-files-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — Files. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: upload-file
+      description: Upload File
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: viya-rest-files.uploadfile
+      outputParameters:
+      - type: object
+        mapping: $.

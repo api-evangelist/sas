@@ -1,0 +1,111 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — Decisions
+  description: 'SAS Viya REST API — Decisions. 2 operations. Lead operation: List Decision Flows. Self-contained Naftiko capability
+    covering one Sas business surface.'
+  tags:
+  - Sas
+  - Decisions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-decisions
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — Decisions business capability. Self-contained, no shared references.
+    resources:
+    - name: decisions-flows
+      path: /decisions/flows
+      operations:
+      - name: listdecisionflows
+        method: GET
+        description: List Decision Flows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: decisions-flows-id
+      path: /decisions/flows/{id}
+      operations:
+      - name: getdecisionflow
+        method: GET
+        description: Get Decision Flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-decisions-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — Decisions. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/decisions/flows
+      name: decisions-flows
+      description: REST surface for decisions-flows.
+      operations:
+      - method: GET
+        name: listdecisionflows
+        description: List Decision Flows
+        call: viya-rest-decisions.listdecisionflows
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/decisions/flows/{id}
+      name: decisions-flows-id
+      description: REST surface for decisions-flows-id.
+      operations:
+      - method: GET
+        name: getdecisionflow
+        description: Get Decision Flow
+        call: viya-rest-decisions.getdecisionflow
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-decisions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — Decisions. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-decision-flows
+      description: List Decision Flows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-decisions.listdecisionflows
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-decision-flow
+      description: Get Decision Flow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: viya-rest-decisions.getdecisionflow
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.

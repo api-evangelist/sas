@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: SAS Viya REST API — Logon
+  description: 'SAS Viya REST API — Logon. 1 operations. Lead operation: Obtain OAuth Access Token. Self-contained Naftiko
+    capability covering one Sas business surface.'
+  tags:
+  - Sas
+  - Logon
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SAS_API_KEY: SAS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: viya-rest-logon
+    baseUri: https://{viya-host}
+    description: SAS Viya REST API — Logon business capability. Self-contained, no shared references.
+    resources:
+    - name: SASLogon-oauth-token
+      path: /SASLogon/oauth/token
+      operations:
+      - name: getaccesstoken
+        method: POST
+        description: Obtain OAuth Access Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.SAS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: viya-rest-logon-rest
+    port: 8080
+    description: REST adapter for SAS Viya REST API — Logon. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/saslogon/oauth/token
+      name: saslogon-oauth-token
+      description: REST surface for SASLogon-oauth-token.
+      operations:
+      - method: POST
+        name: getaccesstoken
+        description: Obtain OAuth Access Token
+        call: viya-rest-logon.getaccesstoken
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: viya-rest-logon-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for SAS Viya REST API — Logon. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: obtain-oauth-access-token
+      description: Obtain OAuth Access Token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: viya-rest-logon.getaccesstoken
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
