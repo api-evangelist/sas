@@ -1,0 +1,326 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAS Viya REST API",
+    "version": "2024.10"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "resource_owner_password_credentials",
+      "accessTokenUrl": "/SASLogon/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Logon",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Obtain OAuth Access Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{viya-host}/SASLogon/oauth/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "username",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Obtain OAuth Access Token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Identities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/identities/users"
+          },
+          "docs": "List Users"
+        },
+        {
+          "info": {
+            "name": "Get User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/identities/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get User"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Folders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/folders/folders"
+          },
+          "docs": "List Folders"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{viya-host}/files/files"
+          },
+          "docs": "Upload File"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/jobExecution/jobs"
+          },
+          "docs": "List Jobs"
+        },
+        {
+          "info": {
+            "name": "Create Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{viya-host}/jobExecution/jobs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Job"
+        },
+        {
+          "info": {
+            "name": "Get Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/jobExecution/jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Job"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/reports/reports"
+          },
+          "docs": "List Reports"
+        },
+        {
+          "info": {
+            "name": "Get Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/reports/reports/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Report"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/modelRepository/models"
+          },
+          "docs": "List Models"
+        },
+        {
+          "info": {
+            "name": "List Model Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/modelManagement/projects"
+          },
+          "docs": "List Model Projects"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Decisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Decision Flows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/decisions/flows"
+          },
+          "docs": "List Decision Flows"
+        },
+        {
+          "info": {
+            "name": "Get Decision Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/decisions/flows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Decision Flow"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "BusinessRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Rule Sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/businessRules/ruleSets"
+          },
+          "docs": "List Rule Sets"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CAS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List CAS Servers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/casManagement/servers"
+          },
+          "docs": "List CAS Servers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

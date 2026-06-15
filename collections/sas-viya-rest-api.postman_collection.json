@@ -1,0 +1,1667 @@
+{
+  "item": [
+    {
+      "id": "a452cb94-4e33-4c09-8a5f-5cde07b87294",
+      "name": "Logon",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "066f2dcd-0f8e-4427-a3b2-1f66bc0ba682",
+          "name": "Obtain OAuth Access Token",
+          "request": {
+            "name": "Obtain OAuth Access Token",
+            "description": {},
+            "url": {
+              "path": [
+                "SASLogon",
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3858a911-aefd-4fc6-80e5-7d0a5cd89896",
+              "name": "OAuth token response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SASLogon",
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1f67ceb7-e9da-4508-b8d1-d7112e31be83",
+      "name": "Identities",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "235be0dc-3086-4cd4-b334-b98f94a70736",
+          "name": "List Users",
+          "request": {
+            "name": "List Users",
+            "description": {},
+            "url": {
+              "path": [
+                "identities",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.collection+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5be6a035-f660-488c-b9a2-14cc7a13af35",
+              "name": "A collection of users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "identities",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.collection+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.collection+json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"group\",\n      \"providerId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"group\",\n      \"providerId\": \"string\"\n    }\n  ],\n  \"count\": 7257\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c970daf6-75c7-4dc2-bbe2-f67d8fd90652",
+          "name": "Get User",
+          "request": {
+            "name": "Get User",
+            "description": {},
+            "url": {
+              "path": [
+                "identities",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.identity+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdd7cb61-99d3-4fb8-9fc4-5a5debc2de8e",
+              "name": "A user",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "identities",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.identity+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.identity+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"user\",\n  \"providerId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fd34f1ba-c2d0-42ec-a3e9-1fcd8e5702b8",
+      "name": "Folders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9af1cc7-a668-4fcb-a097-12634e87e6ad",
+          "name": "List Folders",
+          "request": {
+            "name": "List Folders",
+            "description": {},
+            "url": {
+              "path": [
+                "folders",
+                "folders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e0bcb70-e5da-4b18-a976-82baad4264bc",
+              "name": "A collection of folders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "folders",
+                    "folders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "35a18370-426b-4466-829c-4261a27e4853",
+      "name": "Files",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1b368367-50a8-4010-8fb1-95bd2833986e",
+          "name": "Upload File",
+          "request": {
+            "name": "Upload File",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6fcf1bf7-2bae-4393-a445-b162366f6c35",
+              "name": "File created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d8dbdc37-0ff2-4264-acd6-008b55e858b6",
+      "name": "Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e89ae0e2-b28e-4d1e-99ec-4868882d8b71",
+          "name": "List Jobs",
+          "request": {
+            "name": "List Jobs",
+            "description": {},
+            "url": {
+              "path": [
+                "jobExecution",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.collection+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59554b74-2914-493a-adc6-6a4cbdc855a8",
+              "name": "A collection of jobs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobExecution",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.collection+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.collection+json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"state\": \"pending\",\n      \"jobDefinitionUri\": \"string\",\n      \"createdBy\": \"string\",\n      \"creationTimeStamp\": \"2012-01-06T21:14:33.625Z\",\n      \"endTimeStamp\": \"1974-01-10T00:17:20.053Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"state\": \"completed\",\n      \"jobDefinitionUri\": \"string\",\n      \"createdBy\": \"string\",\n      \"creationTimeStamp\": \"1955-07-11T04:22:27.205Z\",\n      \"endTimeStamp\": \"1990-06-17T17:37:01.049Z\"\n    }\n  ],\n  \"count\": 2453\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07a95267-5bf2-4e7c-b84e-6f6d4c9c863f",
+          "name": "Create Job",
+          "request": {
+            "name": "Create Job",
+            "description": {},
+            "url": {
+              "path": [
+                "jobExecution",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.sas.job.execution.job.request+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"jobDefinitionUri\": \"<string>\",\n  \"createdBy\": \"<string>\",\n  \"creationTimeStamp\": \"<dateTime>\",\n  \"endTimeStamp\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "70ce753f-460f-42df-ac63-6dbcafc6e9ff",
+              "name": "Job created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobExecution",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"jobDefinitionUri\": \"<string>\",\n  \"createdBy\": \"<string>\",\n  \"creationTimeStamp\": \"<dateTime>\",\n  \"endTimeStamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daea7fa8-6232-4432-92bb-9e95852460dc",
+          "name": "Get Job",
+          "request": {
+            "name": "Get Job",
+            "description": {},
+            "url": {
+              "path": [
+                "jobExecution",
+                "jobs",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.job.execution.job+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52fe187e-626d-451f-b8cf-0cdbbd1b827c",
+              "name": "A job",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobExecution",
+                    "jobs",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.job.execution.job+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.job.execution.job+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"jobDefinitionUri\": \"<string>\",\n  \"createdBy\": \"<string>\",\n  \"creationTimeStamp\": \"<dateTime>\",\n  \"endTimeStamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2cbf1429-2a44-42c5-adb0-7b3beaaa0749",
+      "name": "Reports",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f116001-c107-4f67-b2bb-51df90112969",
+          "name": "List Reports",
+          "request": {
+            "name": "List Reports",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.collection+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f8ba049-a9a6-4d48-a8c4-f5825c7c0b5d",
+              "name": "A collection of reports",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.collection+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.collection+json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdBy\": \"string\",\n      \"modifiedTimeStamp\": \"2014-03-22T22:52:46.268Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdBy\": \"string\",\n      \"modifiedTimeStamp\": \"2003-12-12T08:17:38.793Z\"\n    }\n  ],\n  \"count\": 1534\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58ad06ed-bc27-4956-8141-1e466bb03d9d",
+          "name": "Get Report",
+          "request": {
+            "name": "Get Report",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.report+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0cc6f1f-d9e2-4489-b7e4-4635b7a0f520",
+              "name": "A report",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.report+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.report+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"createdBy\": \"string\",\n  \"modifiedTimeStamp\": \"1987-02-02T17:48:17.509Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "76cba63c-cad8-4b7b-95f3-a6808b957613",
+      "name": "Models",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6ac46e6a-a7a5-4c50-a5ed-7f1e1501b884",
+          "name": "List Models",
+          "request": {
+            "name": "List Models",
+            "description": {},
+            "url": {
+              "path": [
+                "modelRepository",
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "176e9ed2-fe01-432f-b18d-ce76a070a8f2",
+              "name": "A collection of models",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "modelRepository",
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12a5dc55-1f0c-461d-a559-6580b1d733fc",
+          "name": "List Model Projects",
+          "request": {
+            "name": "List Model Projects",
+            "description": {},
+            "url": {
+              "path": [
+                "modelManagement",
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "031d89bd-32a7-4266-b368-2423def7ed01",
+              "name": "A collection of model management projects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "modelManagement",
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7d4bebc5-9b4f-4b57-809f-c2a104086332",
+      "name": "Decisions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8474af61-50a5-417f-b074-136127019129",
+          "name": "List Decision Flows",
+          "request": {
+            "name": "List Decision Flows",
+            "description": {},
+            "url": {
+              "path": [
+                "decisions",
+                "flows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.collection+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8de8454-3552-462f-a9aa-cc9900af55ff",
+              "name": "A collection of decision flows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "decisions",
+                    "flows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.collection+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.collection+json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"majorRevision\": 165,\n      \"minorRevision\": 249,\n      \"createdBy\": \"string\",\n      \"creationTimeStamp\": \"1955-08-05T06:54:33.497Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"majorRevision\": 8804,\n      \"minorRevision\": 459,\n      \"createdBy\": \"string\",\n      \"creationTimeStamp\": \"1987-04-01T21:21:43.561Z\"\n    }\n  ],\n  \"count\": 8027\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f013f01-a83b-499d-b661-b7101a10edbb",
+          "name": "Get Decision Flow",
+          "request": {
+            "name": "Get Decision Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "decisions",
+                "flows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.decision+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4481c340-284a-4537-bc56-b664ffa4bc56",
+              "name": "A decision flow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "decisions",
+                    "flows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.decision+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.decision+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"majorRevision\": 8089,\n  \"minorRevision\": 7593,\n  \"createdBy\": \"string\",\n  \"creationTimeStamp\": \"1971-10-03T11:59:32.290Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a85d3cba-8442-47fa-a193-bd1c5f1ff681",
+      "name": "BusinessRules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d6764ef-3ca7-4b2d-92bd-cd1cef83fefd",
+          "name": "List Rule Sets",
+          "request": {
+            "name": "List Rule Sets",
+            "description": {},
+            "url": {
+              "path": [
+                "businessRules",
+                "ruleSets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0c041b9-6d2e-489f-89e5-18561adde9fc",
+              "name": "A collection of rule sets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "businessRules",
+                    "ruleSets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3c8da6bd-04e5-4451-9ab5-a85a48dee2ca",
+      "name": "CAS",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f7721c42-1689-482b-9a47-0bc621bf0473",
+          "name": "List CAS Servers",
+          "request": {
+            "name": "List CAS Servers",
+            "description": {},
+            "url": {
+              "path": [
+                "casManagement",
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64c3d7dd-822f-4b5f-b578-c51677293280",
+              "name": "A collection of CAS servers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "casManagement",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The tenant host for the SAS Viya deployment",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "viya.example.com",
+      "key": "viya-host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{viya-host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "openid"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "/SASLogon/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "password_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a4d5c208-f0b8-4ce7-bf66-4399e2ce25e9",
+    "name": "SAS Viya REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative slice of the SAS Viya REST API surface across the platform's primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.\n\nContact Support:\n Name: SAS Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
