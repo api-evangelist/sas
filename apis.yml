@@ -33,7 +33,7 @@ apis:
       - url: https://developer.sas.com/rest-apis
         type: APICatalog
       - url: https://developer.sas.com/sdk/
-        type: SDK
+        type: SDKs
       - url: openapi/sas-viya-rest-api-openapi.yml
         type: OpenAPI
       - url: json-schema/sas-viya-rest-api-job-schema.json
@@ -62,7 +62,7 @@ common:
     url: https://developer.sas.com/apis/rest/
   - type: APICatalog
     url: https://developer.sas.com/rest-apis
-  - type: SDK
+  - type: SDKs
     url: https://developer.sas.com/sdk/
   - type: GettingStarted
     url: https://developer.sas.com/guides/get-started-rest-apis.html
