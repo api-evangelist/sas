@@ -50,6 +50,10 @@ apis:
       Identities, Authorization, Files, Folders, Jobs, and Logon (OAuth). Together they let developers automate SAS Viya
       analytic workloads, publish models, embed reports, and govern AI lifecycles.
 common:
+  - type: Authentication
+    url: authentication/sas-authentication.yml
+  - type: OAuthScopes
+    url: scopes/sas-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/sassoftware
   - type: LinkedIn
@@ -66,6 +70,8 @@ common:
     url: https://developer.sas.com/sdk/
   - type: GettingStarted
     url: https://developer.sas.com/guides/get-started-rest-apis.html
+  - type: Blog
+    url: https://blogs.sas.com/content/feed/
   - type: SpectralRules
     url: rules/sas-spectral-rules.yml
   - type: Vocabulary
