@@ -1,4 +1,19 @@
-extends: [[spectral:oas, all]]
+# sas — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - path-params-casing: snake @ 100% (n=4)
+#   - operationid-casing: camel @ 100% (n=16)
+#   - schema-names-casing: pascal @ 100% (n=8)
+#   - schema-properties-casing: snake @ 63% (n=30)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - merge: kept 5 existing, added 6 measured, upgraded 0
+#   - added: servers-https-only, path-params-casing, schema-names-casing, schema-properties-casing, security-schemes-defined, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   sas-tags-title-case:
     description: Tags should be in Title Case (e.g., Decisions, Reports)
@@ -7,7 +22,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^([A-Z][a-zA-Z0-9]*)( [A-Z][a-zA-Z0-9]*)*$'
+        match: ^([A-Z][a-zA-Z0-9]*)( [A-Z][a-zA-Z0-9]*)*$
   sas-operation-id-camel-case:
     description: operationId should be camelCase
     given: $.paths.*.*.operationId
@@ -15,7 +30,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^[a-z][a-zA-Z0-9]+$'
+        match: ^[a-z][a-zA-Z0-9]+$
   sas-summary-title-case:
     description: Operation summaries should use Title Case
     given: $.paths.*.*.summary
@@ -23,7 +38,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^[A-Z]'
+        match: ^[A-Z]
   sas-oauth-required:
     description: Operations should be secured via OAuth via SAS Logon
     given: $.paths.*.*
@@ -38,4 +53,51 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: 'application/vnd\\.sas\\.'
+        match: application/vnd\\.sas\\.
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  path-params-casing:
+    description: Path parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: snake
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  security-schemes-defined:
+    description: Security schemes should be defined in components.
+    severity: warn
+    given: $.components
+    then:
+      field: securitySchemes
+      function: truthy
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
+      function: truthy
