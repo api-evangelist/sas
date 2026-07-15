@@ -50,6 +50,8 @@ apis:
       Identities, Authorization, Files, Folders, Jobs, and Logon (OAuth). Together they let developers automate SAS Viya
       analytic workloads, publish models, embed reports, and govern AI lifecycles.
 common:
+  - type: AgenticAccess
+    url: agentic-access/sas-agentic-access.yml
   - type: DomainSecurity
     url: security/sas-domain-security.yml
   - type: Authentication
