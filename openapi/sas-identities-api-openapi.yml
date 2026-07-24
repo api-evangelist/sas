@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: SAS Viya REST BusinessRules Identities API
+  description: 'Representative slice of the SAS Viya REST API surface across the platform''s primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.'
+  version: '2024.10'
+  contact:
+    name: SAS Developer Portal
+    url: https://developer.sas.com/
+servers:
+- url: https://{viya-host}
+  description: A SAS Viya deployment
+  variables:
+    viya-host:
+      default: viya.example.com
+      description: The tenant host for the SAS Viya deployment
+security:
+- oauth2: []
+tags:
+- name: Identities
+paths:
+  /identities/users:
+    get:
+      summary: List Users
+      operationId: listUsers
+      tags:
+      - Identities
+      responses:
+        '200':
+          description: A collection of users
+          content:
+            application/vnd.sas.collection+json:
+              schema:
+                $ref: '#/components/schemas/UserCollection'
+  /identities/users/{id}:
+    get:
+      summary: Get User
+      operationId: getUser
+      tags:
+      - Identities
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A user
+          content:
+            application/vnd.sas.identity+json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - user
+          - group
+        providerId:
+          type: string
+    UserCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        count:
+          type: integer
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /SASLogon/oauth/token
+          scopes:
+            openid: OpenID Connect scope

@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: SAS Viya REST BusinessRules Decisions API
+  description: 'Representative slice of the SAS Viya REST API surface across the platform''s primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.'
+  version: '2024.10'
+  contact:
+    name: SAS Developer Portal
+    url: https://developer.sas.com/
+servers:
+- url: https://{viya-host}
+  description: A SAS Viya deployment
+  variables:
+    viya-host:
+      default: viya.example.com
+      description: The tenant host for the SAS Viya deployment
+security:
+- oauth2: []
+tags:
+- name: Decisions
+paths:
+  /decisions/flows:
+    get:
+      summary: List Decision Flows
+      operationId: listDecisionFlows
+      tags:
+      - Decisions
+      responses:
+        '200':
+          description: A collection of decision flows
+          content:
+            application/vnd.sas.collection+json:
+              schema:
+                $ref: '#/components/schemas/DecisionCollection'
+  /decisions/flows/{id}:
+    get:
+      summary: Get Decision Flow
+      operationId: getDecisionFlow
+      tags:
+      - Decisions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A decision flow
+          content:
+            application/vnd.sas.decision+json:
+              schema:
+                $ref: '#/components/schemas/Decision'
+components:
+  schemas:
+    DecisionCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Decision'
+        count:
+          type: integer
+    Decision:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        majorRevision:
+          type: integer
+        minorRevision:
+          type: integer
+        createdBy:
+          type: string
+        creationTimeStamp:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /SASLogon/oauth/token
+          scopes:
+            openid: OpenID Connect scope

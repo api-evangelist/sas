@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: SAS Viya REST BusinessRules CAS API
+  description: 'Representative slice of the SAS Viya REST API surface across the platform''s primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.'
+  version: '2024.10'
+  contact:
+    name: SAS Developer Portal
+    url: https://developer.sas.com/
+servers:
+- url: https://{viya-host}
+  description: A SAS Viya deployment
+  variables:
+    viya-host:
+      default: viya.example.com
+      description: The tenant host for the SAS Viya deployment
+security:
+- oauth2: []
+tags:
+- name: CAS
+paths:
+  /casManagement/servers:
+    get:
+      summary: List CAS Servers
+      operationId: listCasServers
+      tags:
+      - CAS
+      responses:
+        '200':
+          description: A collection of CAS servers
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /SASLogon/oauth/token
+          scopes:
+            openid: OpenID Connect scope

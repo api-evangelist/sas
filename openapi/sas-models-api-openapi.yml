@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: SAS Viya REST BusinessRules Models API
+  description: 'Representative slice of the SAS Viya REST API surface across the platform''s primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.'
+  version: '2024.10'
+  contact:
+    name: SAS Developer Portal
+    url: https://developer.sas.com/
+servers:
+- url: https://{viya-host}
+  description: A SAS Viya deployment
+  variables:
+    viya-host:
+      default: viya.example.com
+      description: The tenant host for the SAS Viya deployment
+security:
+- oauth2: []
+tags:
+- name: Models
+paths:
+  /modelRepository/models:
+    get:
+      summary: List Models
+      operationId: listModels
+      tags:
+      - Models
+      responses:
+        '200':
+          description: A collection of models
+  /modelManagement/projects:
+    get:
+      summary: List Model Projects
+      operationId: listModelProjects
+      tags:
+      - Models
+      responses:
+        '200':
+          description: A collection of model management projects
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /SASLogon/oauth/token
+          scopes:
+            openid: OpenID Connect scope

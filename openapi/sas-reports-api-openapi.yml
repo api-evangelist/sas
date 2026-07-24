@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: SAS Viya REST BusinessRules Reports API
+  description: 'Representative slice of the SAS Viya REST API surface across the platform''s primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.'
+  version: '2024.10'
+  contact:
+    name: SAS Developer Portal
+    url: https://developer.sas.com/
+servers:
+- url: https://{viya-host}
+  description: A SAS Viya deployment
+  variables:
+    viya-host:
+      default: viya.example.com
+      description: The tenant host for the SAS Viya deployment
+security:
+- oauth2: []
+tags:
+- name: Reports
+paths:
+  /reports/reports:
+    get:
+      summary: List Reports
+      operationId: listReports
+      tags:
+      - Reports
+      responses:
+        '200':
+          description: A collection of reports
+          content:
+            application/vnd.sas.collection+json:
+              schema:
+                $ref: '#/components/schemas/ReportCollection'
+  /reports/reports/{id}:
+    get:
+      summary: Get Report
+      operationId: getReport
+      tags:
+      - Reports
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A report
+          content:
+            application/vnd.sas.report+json:
+              schema:
+                $ref: '#/components/schemas/Report'
+components:
+  schemas:
+    ReportCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Report'
+        count:
+          type: integer
+    Report:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        createdBy:
+          type: string
+        modifiedTimeStamp:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /SASLogon/oauth/token
+          scopes:
+            openid: OpenID Connect scope
