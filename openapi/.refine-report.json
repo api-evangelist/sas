@@ -1,0 +1,32 @@
+{
+  "provider": "sas",
+  "sources": [
+    "sas-businessrules-api-openapi.yml",
+    "sas-cas-api-openapi.yml",
+    "sas-decisions-api-openapi.yml",
+    "sas-files-api-openapi.yml",
+    "sas-folders-api-openapi.yml",
+    "sas-identities-api-openapi.yml",
+    "sas-jobs-api-openapi.yml",
+    "sas-logon-api-openapi.yml",
+    "sas-models-api-openapi.yml",
+    "sas-reports-api-openapi.yml"
+  ],
+  "outputs": [
+    "sas-businessrules-api-openapi.yml",
+    "sas-cas-api-openapi.yml",
+    "sas-decisions-api-openapi.yml",
+    "sas-files-api-openapi.yml",
+    "sas-folders-api-openapi.yml",
+    "sas-identities-api-openapi.yml",
+    "sas-jobs-api-openapi.yml",
+    "sas-logon-api-openapi.yml",
+    "sas-models-api-openapi.yml",
+    "sas-reports-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
