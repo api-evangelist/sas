@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "f1dd3073-008c-443d-b4d2-8d239816ec34",
+      "name": "Logon",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0442e152-9d74-40ee-9dd7-e2fcceb2b71e",
+          "name": "Obtain OAuth Access Token",
+          "request": {
+            "name": "Obtain OAuth Access Token",
+            "description": {},
+            "url": {
+              "path": [
+                "SASLogon",
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e01060b6-53e8-4569-9dc9-7623a5c07f15",
+              "name": "OAuth token response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SASLogon",
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The tenant host for the SAS Viya deployment",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "viya.example.com",
+      "key": "viya-host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{viya-host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "openid"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "/SASLogon/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "password_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "39995596-3969-43fe-91c9-a34feedc45de",
+    "name": "SAS Viya REST BusinessRules Logon API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative slice of the SAS Viya REST API surface across the platform's primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.\n\nContact Support:\n Name: SAS Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

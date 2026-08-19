@@ -1,0 +1,139 @@
+{
+  "item": [
+    {
+      "id": "80a932ce-13df-43a8-9ec1-cbe13f2b8065",
+      "name": "BusinessRules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a4cd2662-b7bd-495b-9a02-116d6e5d1ad9",
+          "name": "List Rule Sets",
+          "request": {
+            "name": "List Rule Sets",
+            "description": {},
+            "url": {
+              "path": [
+                "businessRules",
+                "ruleSets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a872f298-df59-417c-9797-3a56f0674b1e",
+              "name": "A collection of rule sets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "businessRules",
+                    "ruleSets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The tenant host for the SAS Viya deployment",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "viya.example.com",
+      "key": "viya-host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{viya-host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "openid"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "/SASLogon/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "password_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d96d6a2a-46c6-4343-b4fd-50c4f130c512",
+    "name": "SAS Viya REST BusinessRules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative slice of the SAS Viya REST API surface across the platform's primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.\n\nContact Support:\n Name: SAS Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

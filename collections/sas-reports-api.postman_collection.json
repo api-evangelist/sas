@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "cf06a7de-ff04-4fc7-8679-ab20197e3052",
+      "name": "Reports",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "13678842-a2c1-495f-9231-e1f7325bc0a9",
+          "name": "List Reports",
+          "request": {
+            "name": "List Reports",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.collection+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0194ec94-ccaf-47dd-be8a-bf42dfc36f2b",
+              "name": "A collection of reports",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.collection+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.collection+json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdBy\": \"string\",\n      \"modifiedTimeStamp\": \"2019-05-25T02:07:03.145Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdBy\": \"string\",\n      \"modifiedTimeStamp\": \"1999-11-08T03:19:53.010Z\"\n    }\n  ],\n  \"count\": 5426\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22fe1835-f195-44f2-859b-3295e3a661c3",
+          "name": "Get Report",
+          "request": {
+            "name": "Get Report",
+            "description": {},
+            "url": {
+              "path": [
+                "reports",
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.report+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cd71672a-235a-4def-9e2f-fa15872eb413",
+              "name": "A report",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.report+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.report+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"createdBy\": \"string\",\n  \"modifiedTimeStamp\": \"2009-11-17T23:30:19.497Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The tenant host for the SAS Viya deployment",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "viya.example.com",
+      "key": "viya-host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{viya-host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "openid"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "/SASLogon/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "password_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e1f566ee-348b-43f1-aedc-61e2d344a90e",
+    "name": "SAS Viya REST BusinessRules Reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative slice of the SAS Viya REST API surface across the platform's primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.\n\nContact Support:\n Name: SAS Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

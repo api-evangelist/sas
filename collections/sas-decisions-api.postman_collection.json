@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "3aa1c584-f5d8-4fbd-b6bc-4bdef0bba465",
+      "name": "Decisions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "47db0881-4230-4f59-8c50-343c3c7be8de",
+          "name": "List Decision Flows",
+          "request": {
+            "name": "List Decision Flows",
+            "description": {},
+            "url": {
+              "path": [
+                "decisions",
+                "flows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.collection+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce375839-6208-4c3e-87e2-69205fce6b99",
+              "name": "A collection of decision flows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "decisions",
+                    "flows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.collection+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.collection+json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"majorRevision\": 7233,\n      \"minorRevision\": 508,\n      \"createdBy\": \"string\",\n      \"creationTimeStamp\": \"1978-07-03T19:12:30.073Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"majorRevision\": 8458,\n      \"minorRevision\": 3176,\n      \"createdBy\": \"string\",\n      \"creationTimeStamp\": \"1988-11-09T07:25:38.555Z\"\n    }\n  ],\n  \"count\": 1105\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42b20836-1797-4441-a1f7-b72425a47bfe",
+          "name": "Get Decision Flow",
+          "request": {
+            "name": "Get Decision Flow",
+            "description": {},
+            "url": {
+              "path": [
+                "decisions",
+                "flows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The tenant host for the SAS Viya deployment",
+                  "type": "any",
+                  "value": "{{viya-host}}",
+                  "key": "viya-host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.sas.decision+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93e451dc-251a-46ba-8d90-fdd1f63e97f2",
+              "name": "A decision flow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "decisions",
+                    "flows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The tenant host for the SAS Viya deployment",
+                      "type": "any",
+                      "value": "{{viya-host}}",
+                      "key": "viya-host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.sas.decision+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.sas.decision+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"majorRevision\": 3783,\n  \"minorRevision\": 8997,\n  \"createdBy\": \"string\",\n  \"creationTimeStamp\": \"1996-11-07T11:53:04.629Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The tenant host for the SAS Viya deployment",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "viya.example.com",
+      "key": "viya-host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{viya-host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "openid"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "/SASLogon/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "password_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d5481057-b258-4390-a4b3-ab14f276a41f",
+    "name": "SAS Viya REST BusinessRules Decisions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative slice of the SAS Viya REST API surface across the platform's primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.\n\nContact Support:\n Name: SAS Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

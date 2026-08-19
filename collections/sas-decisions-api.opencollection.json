@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAS Viya REST BusinessRules Decisions API",
+    "version": "2024.10"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "resource_owner_password_credentials",
+      "accessTokenUrl": "/SASLogon/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Decisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Decision Flows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/decisions/flows"
+          },
+          "docs": "List Decision Flows"
+        },
+        {
+          "info": {
+            "name": "Get Decision Flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{viya-host}/decisions/flows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Decision Flow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
