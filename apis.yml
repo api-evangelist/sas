@@ -20,6 +20,12 @@ tags:
   - Analytics
   - Data Management
   - Artificial Intelligence
+  - Machine-Learning
+  - Software
+tags_raw:
+  - Analytics
+  - Data Management
+  - Artificial Intelligence
   - Machine Learning
   - Software
 description: >-
@@ -36,6 +42,8 @@ apis:
   description: The BusinessRules API from SAS Institute — 1 operation(s) for businessrules.
   humanURL: https://developer.sas.com/apis/rest/
   tags:
+  - Business Rules
+  tags_raw:
   - BusinessRules
   properties:
   - type: OpenAPI
@@ -105,6 +113,8 @@ apis:
   description: The Files API from SAS Institute — 1 operation(s) for files.
   humanURL: https://developer.sas.com/apis/rest/
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -174,6 +184,8 @@ apis:
   description: The Jobs API from SAS Institute — 2 operation(s) for jobs.
   humanURL: https://developer.sas.com/apis/rest/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
