@@ -54,7 +54,7 @@ apis:
   description: The BusinessRules API from SAS Institute — 1 operation(s) for businessrules.
   humanURL: https://developer.sas.com/apis/rest/
   tags:
-  - BusinessRules
+  - Business Rules
   tags_raw:
   - BusinessRules
   properties:
