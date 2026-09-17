@@ -49,31 +49,6 @@ created: '2026-05-05'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: sas:sas-businessrules-api
-  name: SAS Institute BusinessRules API
-  description: The BusinessRules API from SAS Institute — 1 operation(s) for businessrules.
-  humanURL: https://developer.sas.com/apis/rest/
-  tags:
-  - Business Rules
-  tags_raw:
-  - BusinessRules
-  properties:
-  - type: OpenAPI
-    url: openapi/sas-businessrules-api-openapi.yml
-  - type: Documentation
-    url: https://developer.sas.com/apis/rest/
-  - type: APICatalog
-    url: https://developer.sas.com/rest-apis
-  - type: SDKs
-    url: https://developer.sas.com/sdk/
-  - type: JSONSchema
-    url: json-schema/sas-viya-rest-api-job-schema.json
-  - type: JSONSchema
-    url: json-schema/sas-viya-rest-api-report-schema.json
-  - type: JSONSchema
-    url: json-schema/sas-viya-rest-api-decision-schema.json
-  - type: JSONLD
-    url: json-ld/sas-viya-rest-api-context.jsonld
 - aid: sas:sas-cas-api
   name: SAS Institute CAS API
   description: The CAS API from SAS Institute — 1 operation(s) for cas.
@@ -271,6 +246,29 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/sas-reports-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sas.com/apis/rest/
+  - type: APICatalog
+    url: https://developer.sas.com/rest-apis
+  - type: SDKs
+    url: https://developer.sas.com/sdk/
+  - type: JSONSchema
+    url: json-schema/sas-viya-rest-api-job-schema.json
+  - type: JSONSchema
+    url: json-schema/sas-viya-rest-api-report-schema.json
+  - type: JSONSchema
+    url: json-schema/sas-viya-rest-api-decision-schema.json
+  - type: JSONLD
+    url: json-ld/sas-viya-rest-api-context.jsonld
+- aid: sas:sas-business-rules-api
+  name: SAS Institute Business Rules API
+  description: The Business Rules API from SAS Institute — 1 operation(s) for business rules.
+  humanURL: https://developer.sas.com/apis/rest/
+  tags:
+  - Business Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/sas-business-rules-api-openapi.yml
   - type: Documentation
     url: https://developer.sas.com/apis/rest/
   - type: APICatalog
