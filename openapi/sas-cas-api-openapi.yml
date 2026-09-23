@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: SAS Viya REST BusinessRules CAS API
+  title: SAS Viya REST CAS API
   description: 'Representative slice of the SAS Viya REST API surface across the platform''s primary capability domains: jobs, reports, models, decisions, identities, files, folders, and OAuth via SAS Logon. The full catalog lists 50+ services at https://developer.sas.com/rest-apis.'
   version: '2024.10'
   contact:

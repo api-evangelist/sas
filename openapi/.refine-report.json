@@ -1,16 +1,7 @@
 {
   "provider": "sas",
   "sources": [
-    "sas-businessrules-api-openapi.yml",
-    "sas-cas-api-openapi.yml",
-    "sas-decisions-api-openapi.yml",
-    "sas-files-api-openapi.yml",
-    "sas-folders-api-openapi.yml",
-    "sas-identities-api-openapi.yml",
-    "sas-jobs-api-openapi.yml",
-    "sas-logon-api-openapi.yml",
-    "sas-models-api-openapi.yml",
-    "sas-reports-api-openapi.yml"
+    "_original/sas-viya-rest-api-openapi.yml"
   ],
   "outputs": [
     "sas-businessrules-api-openapi.yml",
@@ -24,9 +15,37 @@
     "sas-models-api-openapi.yml",
     "sas-reports-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sas-viya-rest-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: BusinessRules",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: CAS",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Decisions",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Files",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Folders",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Identities",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Jobs",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Logon",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Models",
+    "sas-viya-rest-api-openapi.yml: declared missing tag: Reports",
+    "superseded outputs removed: sas-business-rules-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 10 total)"
+  ],
+  "skipped": [
+    "sas-business-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-cas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-decisions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-identities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-logon-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sas-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
