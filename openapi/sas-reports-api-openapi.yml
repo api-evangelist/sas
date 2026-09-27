@@ -52,6 +52,15 @@ paths:
                 $ref: '#/components/schemas/Report'
 components:
   schemas:
+    ReportCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Report'
+        count:
+          type: integer
     Report:
       type: object
       properties:
@@ -66,15 +75,6 @@ components:
         modifiedTimeStamp:
           type: string
           format: date-time
-    ReportCollection:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Report'
-        count:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2

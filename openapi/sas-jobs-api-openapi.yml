@@ -66,15 +66,6 @@ paths:
                 $ref: '#/components/schemas/Job'
 components:
   schemas:
-    JobCollection:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-        count:
-          type: integer
     Job:
       type: object
       properties:
@@ -100,6 +91,15 @@ components:
         endTimeStamp:
           type: string
           format: date-time
+    JobCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        count:
+          type: integer
   securitySchemes:
     oauth2:
       type: oauth2

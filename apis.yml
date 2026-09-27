@@ -32,7 +32,7 @@ tags:
   - Analytics
   - Data Management
   - Artificial Intelligence
-  - Machine-Learning
+  - Machine Learning
   - Software
 tags_raw:
   - Analytics
@@ -40,6 +40,7 @@ tags_raw:
   - Artificial Intelligence
   - Machine Learning
   - Software
+  - Machine-Learning
 description: >-
   SAS Institute is a global leader in analytics, AI, and data management software. SAS Viya, its cloud-native platform,
   exposes a comprehensive catalog of REST APIs covering data management, machine learning, decisions, reports,

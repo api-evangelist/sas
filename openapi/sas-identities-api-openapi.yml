@@ -52,6 +52,15 @@ paths:
                 $ref: '#/components/schemas/User'
 components:
   schemas:
+    UserCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        count:
+          type: integer
     User:
       type: object
       properties:
@@ -66,15 +75,6 @@ components:
           - group
         providerId:
           type: string
-    UserCollection:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-        count:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2
