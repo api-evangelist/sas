@@ -1,0 +1,12 @@
+generated: '2026-10-04'
+method: generated
+generator: extract-docs-artifacts.py skills (local)
+source: openapi/sas-jobs-api-openapi.yml
+skills:
+- file: skills/sas-create-and-retrieve-job.md
+  name: sas-create-and-retrieve-job
+  api: openapi/sas-jobs-api-openapi.yml
+  operations:
+  - createJob
+  - getJob
+  - listJobs

@@ -1,7 +1,11 @@
 aid: sas
+
 url: https://raw.githubusercontent.com/api-evangelist/sas/refs/heads/main/apis.yml
+
 name: SAS Institute
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -14,6 +18,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -27,13 +32,16 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sas.png
+
 tags:
   - Analytics
   - Data Management
   - Artificial Intelligence
   - Machine Learning
   - Software
+
 tags_raw:
   - Analytics
   - Data Management
@@ -41,14 +49,139 @@ tags_raw:
   - Machine Learning
   - Software
   - Machine-Learning
+
 description: >-
   SAS Institute is a global leader in analytics, AI, and data management software. SAS Viya, its cloud-native platform,
   exposes a comprehensive catalog of REST APIs covering data management, machine learning, decisions, reports,
   identities, and platform administration. The Viya REST API surface enables embedding analytics, automating model
   lifecycles, and integrating governed AI into business workflows.
+
 created: '2026-05-05'
+
 modified: '2026-05-19'
+
 specificationVersion: '0.23'
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+
+common:
+  - type: GettingStarted
+    url: https://developer.sas.com/docs/rest-apis/getting-started/usage-notes
+  - type: Spectral
+    url: rules/sas-spectral-rules.yml
+  - type: Spectral
+    url: rules/sas-rules.yml
+  - type: Spectral
+    url: rules/sas-jsonschema-spectral-rules.yml
+  - type: JSONLD
+    url: json-ld/sas-context.jsonld
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: DataModel
+    url: data-model/sas-data-model.yml
+  - type: Conformance
+    url: conformance/sas-conformance.yml
+  - type: Overlay
+    url: overlays/sas-logon-api-overlay.yaml
+  - type: LLMsTxt
+    url: llms/sas-llms.txt
+  - type: WellKnown
+    url: well-known/sas-well-known.yml
+  - type: Hosts
+    url: hosts/sas-hosts.yml
+  - type: Vendors
+    url: vendors/sas-vendors.yml
+  - type: Support
+    url: https://support.sas.com
+  - type: PrivacyPolicy
+    url: https://www.sas.com/en_us/legal/privacy.html
+  - type: Newsroom
+    url: http://www.sas.com/de_ch/news/awards.html
+  - type: Leadership
+    url: http://www.sas.com/de_ch/company-information/leadership/jenn-mann.html
+  - type: APIReference
+    url: https://developer.sas.com/rest-apis/index.md
+  - type: AgenticAccess
+    url: agentic-access/sas-agentic-access.yml
+  - type: DomainSecurity
+    url: security/sas-domain-security.yml
+  - type: Authentication
+    url: authentication/sas-authentication.yml
+  - type: OAuthScopes
+    url: scopes/sas-scopes.yml
+  - type: GitHubOrganization
+    url: https://github.com/sassoftware
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/sas
+  - type: Website
+    url: https://www.sas.com/
+  - type: DeveloperPortal
+    url: https://developer.sas.com/
+  - type: Documentation
+    url: https://developer.sas.com/apis/rest/
+  - type: APICatalog
+    url: https://developer.sas.com/rest-apis
+  - type: SDKs
+    url: https://developer.sas.com/sdk/
+  - type: Blog
+    url: https://blogs.sas.com/content/feed/
+  - type: SpectralRules
+    url: rules/sas-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/sas-vocabulary.yml
+  - type: Features
+    data:
+      - name: Cloud Analytic Services (CAS)
+        description: REST access to in-memory CAS server for high-performance analytics on large datasets
+      - name: Model Management
+        description: Register, monitor, compare, and govern machine learning model lifecycles
+      - name: Decisions and Business Rules
+        description: Author, version, and execute decision flows and business rule sets
+      - name: Reports and Visual Analytics
+        description: Create, read, update, and export SAS Visual Analytics reports
+      - name: Data Quality and Catalog
+        description: Manage data sources, tables, lineage, and quality rules with governance
+      - name: OAuth 2.0 via SAS Logon
+        description: Standard OAuth flows through the SAS Logon Manager for secure API access
+      - name: Real-Time Watchlist Screening
+        description: Screen parties and payments against illegal-activity watchlists in real time
+      - name: Event Stream Processing
+        description: Deploy and monitor streaming analytics through Event Stream Manager and Studio
+  - type: UseCases
+    data:
+      - name: Fraud Detection
+        description: Operationalize SAS Fraud and Compliance rules to score transactions in real time
+      - name: Embedded Analytics
+        description: Embed SAS Viya reports and insights into custom portals and applications
+      - name: MLOps Automation
+        description: Automate the model lifecycle from training to publish to monitoring via REST
+      - name: Risk Management
+        description: Score risk decisions and govern compliance through decisioning APIs
+      - name: Customer Intelligence
+        description: Drive marketing journeys with SAS Customer Intelligence 360 event collection
+      - name: Health and Life Sciences
+        description: Manage clinical jobs and clinical repository content via SAS Clinical APIs
+  - type: Integrations
+    data:
+      - name: Python and R
+        description: Open-source clients call SAS Viya REST APIs from Python and R workflows
+      - name: AWS, Azure, and GCP
+        description: Deploy SAS Viya on major cloud providers and integrate with native services
+      - name: Java
+        description: Java SDK and REST clients for embedding SAS analytics in enterprise apps
+      - name: JavaScript and Web Portals
+        description: SAS Viya SDK for JavaScript embeds dashboards and content in web apps
+      - name: Event Streams
+        description: Connect SAS Event Stream Processing to Kafka, MQTT, and IoT pipelines
+  - type: Plans
+    url: plans/sas-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/sas-rate-limits.yml
+  - type: FinOps
+    url: finops/sas-finops.yml
+
 apis:
 - aid: sas:sas-cas-api
   name: SAS Institute CAS API
@@ -284,87 +417,9 @@ apis:
     url: json-schema/sas-viya-rest-api-decision-schema.json
   - type: JSONLD
     url: json-ld/sas-viya-rest-api-context.jsonld
-common:
-  - type: AgenticAccess
-    url: agentic-access/sas-agentic-access.yml
-  - type: DomainSecurity
-    url: security/sas-domain-security.yml
-  - type: Authentication
-    url: authentication/sas-authentication.yml
-  - type: OAuthScopes
-    url: scopes/sas-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/sassoftware
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/sas
-  - type: Website
-    url: https://www.sas.com/
-  - type: DeveloperPortal
-    url: https://developer.sas.com/
-  - type: Documentation
-    url: https://developer.sas.com/apis/rest/
-  - type: APICatalog
-    url: https://developer.sas.com/rest-apis
-  - type: SDKs
-    url: https://developer.sas.com/sdk/
-  - type: GettingStarted
-    url: https://developer.sas.com/guides/get-started-rest-apis.html
-  - type: Blog
-    url: https://blogs.sas.com/content/feed/
-  - type: SpectralRules
-    url: rules/sas-spectral-rules.yml
-  - type: Vocabulary
-    url: vocabulary/sas-vocabulary.yml
-  - type: Features
-    data:
-      - name: Cloud Analytic Services (CAS)
-        description: REST access to in-memory CAS server for high-performance analytics on large datasets
-      - name: Model Management
-        description: Register, monitor, compare, and govern machine learning model lifecycles
-      - name: Decisions and Business Rules
-        description: Author, version, and execute decision flows and business rule sets
-      - name: Reports and Visual Analytics
-        description: Create, read, update, and export SAS Visual Analytics reports
-      - name: Data Quality and Catalog
-        description: Manage data sources, tables, lineage, and quality rules with governance
-      - name: OAuth 2.0 via SAS Logon
-        description: Standard OAuth flows through the SAS Logon Manager for secure API access
-      - name: Real-Time Watchlist Screening
-        description: Screen parties and payments against illegal-activity watchlists in real time
-      - name: Event Stream Processing
-        description: Deploy and monitor streaming analytics through Event Stream Manager and Studio
-  - type: UseCases
-    data:
-      - name: Fraud Detection
-        description: Operationalize SAS Fraud and Compliance rules to score transactions in real time
-      - name: Embedded Analytics
-        description: Embed SAS Viya reports and insights into custom portals and applications
-      - name: MLOps Automation
-        description: Automate the model lifecycle from training to publish to monitoring via REST
-      - name: Risk Management
-        description: Score risk decisions and govern compliance through decisioning APIs
-      - name: Customer Intelligence
-        description: Drive marketing journeys with SAS Customer Intelligence 360 event collection
-      - name: Health and Life Sciences
-        description: Manage clinical jobs and clinical repository content via SAS Clinical APIs
-  - type: Integrations
-    data:
-      - name: Python and R
-        description: Open-source clients call SAS Viya REST APIs from Python and R workflows
-      - name: AWS, Azure, and GCP
-        description: Deploy SAS Viya on major cloud providers and integrate with native services
-      - name: Java
-        description: Java SDK and REST clients for embedding SAS analytics in enterprise apps
-      - name: JavaScript and Web Portals
-        description: SAS Viya SDK for JavaScript embeds dashboards and content in web apps
-      - name: Event Streams
-        description: Connect SAS Event Stream Processing to Kafka, MQTT, and IoT pipelines
-  - type: Plans
-    url: plans/sas-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/sas-rate-limits.yml
-  - type: FinOps
-    url: finops/sas-finops.yml
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-10-04'
+  status: enriched
+  artifacts_added: 15
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

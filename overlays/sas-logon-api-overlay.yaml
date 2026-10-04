@@ -1,0 +1,8 @@
+openapi: "3.0.3"
+info:
+  title: SAS Logon API Overlay
+  version: "2026-10-04"
+actions:
+  - op: add
+    path: /info/x-overlay
+    value: "Generated overlay"
