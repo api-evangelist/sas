@@ -285,6 +285,9 @@ apis:
   - type: JSONLD
     url: json-ld/sas-viya-rest-api-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/sas-capability-edges.yml
+    name: SAS Institute Business Capability Map
   - type: AgenticAccess
     url: agentic-access/sas-agentic-access.yml
   - type: DomainSecurity
