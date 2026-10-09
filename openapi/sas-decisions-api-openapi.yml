@@ -52,6 +52,15 @@ paths:
                 $ref: '#/components/schemas/Decision'
 components:
   schemas:
+    DecisionCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Decision'
+        count:
+          type: integer
     Decision:
       type: object
       properties:
@@ -68,15 +77,6 @@ components:
         creationTimeStamp:
           type: string
           format: date-time
-    DecisionCollection:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Decision'
-        count:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2

@@ -1,0 +1,127 @@
+# SAS Developer Portal
+
+The SAS Developer Portal (developer.sas.com) is the entry point for SAS Viya developer documentation, API references, OpenAPI specifications, SDK resources, and practical programming guidance.
+
+## Getting Started
+
+- [Full REST API index](https://developer.sas.com/rest-apis/index.md) - Start here for complete coverage: every publicly available API, grouped by product area, with links to each index.md and OpenAPI YAML.
+- [REST API home](https://developer.sas.com/rest-apis) - Browsable landing page for the same catalog.
+- [API quickstart and usage notes](https://developer.sas.com/docs/rest-apis/getting-started/usage-notes) - Learn request patterns, pagination, filtering, and common API conventions.
+- [Use cases](https://developer.sas.com/usecases) - Browse practical implementation examples across SAS Viya topics.
+
+## Authentication
+
+- [Authentication guide](https://developer.sas.com/docs/rest-apis/getting-started/authentication) - Primary authentication and token acquisition guidance.
+- [Auth guide for agents](https://developer.sas.com/auth.md) - Machine-readable OAuth 2.0 setup: token endpoint, grant types, scopes, and a worked curl example.
+- [SAS Logon API](https://developer.sas.com/rest-apis/SASLogon/index.md) - OAuth protocol endpoints for obtaining access tokens, including client registration and scopes.
+- [MySAS API keys dashboard](https://developer.sas.com/dashboard/api-keys) - Portal UI for API key management (requires sign-in).
+
+## SAS Viya APIs
+
+Each API links to its `index.md` - a machine-readable hub with the overview, full operations table, error codes, and links to that API's `authentication.md`, `usage-notes.md`, and raw OpenAPI YAML. Links resolve to the newest published version; use llms-full.txt to pin a specific one.
+
+### Visualization and Reports
+
+- [Insights](https://developer.sas.com/rest-apis/insights/index.md) - The Insights API provides insights into your data.
+- [Report Images](https://developer.sas.com/rest-apis/reportImages/index.md) - The reportImages API delivers SVG images representing elements of a report.
+- [Report Transforms](https://developer.sas.com/rest-apis/reportTransforms/index.md) - This API creates and manipulates "transforms" of SAS reports that conform to the Business Intelligence Report Definition (BIRD) specification.
+- [Reports](https://developer.sas.com/rest-apis/reports/index.md) - You can use the Reports API to create, read, and update reports.
+- [Visual Analytics](https://developer.sas.com/rest-apis/visualAnalytics/index.md) - The Visual Analytics API provides simplified ways to perform basic tasks with reports.
+
+### Visual Investigator
+
+- [Data Hub](https://developer.sas.com/rest-apis/svi-datahub/index.md) - The Data Hub API provides access to information that is managed by SAS Visual Investigator.
+- [Search and Discovery](https://developer.sas.com/rest-apis/svi-sand/index.md) - The SAS Visual Investigator Search and Discovery API provides access to real-time exploration and visualization of the data in SAS Visual Investigator.
+- [Visual Investigator Alerts](https://developer.sas.com/rest-apis/svi-alert/index.md) - The Visual Investigator Alerts API supports managing alerts in SAS Visual Investigator.
+- [Visual Investigator Transport](https://developer.sas.com/rest-apis/svi-transport/index.md) - The Transport API imports and exports SAS Visual Investigator configuration data.
+- [Visual Investigator Workflow](https://developer.sas.com/rest-apis/workflows/index.md) - The SAS Visual Investigator Workflow API enable users to execute and manage workflows created within SAS Visual Investigator.
+
+### Platform Administration
+
+- [Annotations](https://developer.sas.com/rest-apis/annotations/index.md) - The Annotations API allows users to associate annotations with resources that other decoupled APIs manage.
+- [Authorization](https://developer.sas.com/rest-apis/authorization/index.md) - Manages authorization rules and makes authorization decisions.
+- [Files](https://developer.sas.com/rest-apis/files/index.md) - The File Service API is a versatile solution for storing, retrieving, and managing different types of files such as documents, attachments, and reports.
+- [Folders](https://developer.sas.com/rest-apis/folders/index.md) - The Folders API provides an organizational structure for SAS and external content.
+- [Identities](https://developer.sas.com/rest-apis/identities/index.md) - The Identities API enables clients to retrieve information about existing identities (users or groups), and provides administrative functions to manage those identities and create new instances.
+- [List Data](https://developer.sas.com/rest-apis/listData/index.md) - This List Data API enables users to manage lookup lists across products and solutions.
+- [Localization](https://developer.sas.com/rest-apis/localization/index.md) - The Localization service provides the ways to get, add or localize the message bundles.
+- [SAS Viya Orders](https://developer.sas.com/rest-apis/mysas/index.md) - API reference for SAS Viya Orders, including operations and machine-readable OpenAPI links.
+
+### Compute and Jobs
+
+- [Batch](https://developer.sas.com/rest-apis/batch/index.md) - The Batch API provides a full suite of capabilities for Batch job execution, control, and management, including robust file handling and job monitoring.
+- [Compute](https://developer.sas.com/rest-apis/compute/index.md) - The Compute API enables users to submit and execute SAS code using REST calls.
+- [Job Definitions](https://developer.sas.com/rest-apis/jobDefinitions/index.md) - The Job Definitions API enables users to manage job definitions using the Create, Read, Update, and Delete operations.
+- [Job Execution](https://developer.sas.com/rest-apis/jobExecution/index.md) - The Job Execution API is used to execute and manage asynchronous jobs across environments.
+
+### Models and Decisions
+
+- [Business Rules](https://developer.sas.com/rest-apis/businessRules/index.md) - The Business Rules API supports the creation and management of business rules.
+- [Data Mining](https://developer.sas.com/rest-apis/dataMining/index.md) - The Data Mining API provides resources for training, scoring, and comparing data mining models.
+- [Decisions](https://developer.sas.com/rest-apis/decisions/index.md) - The Decisions API supports the life cycle of decision data.
+- [Decisions Runtime Builder](https://developer.sas.com/rest-apis/decisionsRuntimeBuilder/index.md) - The Decisions Runtime Builder API provides functions that enable you to update the SAS Container Runtime binary files in a published image.
+- [Micro Analytic Score](https://developer.sas.com/rest-apis/microanalyticScore/index.md) - The Micro Analytic Score API provides stateless, memory-resident, high-performance program execution.
+- [Model Management](https://developer.sas.com/rest-apis/modelManagement/index.md) - The Model Management API provides basic resources for monitoring performance, comparing models, and running workflow processes.
+- [Model Publish](https://developer.sas.com/rest-apis/modelPublish/index.md) - The Model Publish API provides support for publishing objects to a predefined destination.
+- [Model Repository](https://developer.sas.com/rest-apis/modelRepository/index.md) - The Model Repository API provides support for registering, organizing, and managing models within a common model repository.
+- [Reference Data](https://developer.sas.com/rest-apis/referenceData/index.md) - The Reference Data API supports the life cycle of reference data.
+- [Score Definitions](https://developer.sas.com/rest-apis/scoreDefinitions/index.md) - The Score Definitions API is used for creating and maintaining score definitions.
+- [Score Execution](https://developer.sas.com/rest-apis/scoreExecution/index.md) - The Score Execution API is used to produce a score by executing the mapped code generated by score objects using the score definition.
+- [Subject Contacts](https://developer.sas.com/rest-apis/subjectContacts/index.md) - The Subject Contacts API records contacts to subjects and records documents that are produced when executing decisions and business rules.
+- [Treatment Definitions](https://developer.sas.com/rest-apis/treatmentDefinitions/index.md) - The Treatment Definitions API is used for creating and maintaining treatment definitions and treatment definition groups.
+
+### Data Management
+
+- [Catalog](https://developer.sas.com/rest-apis/catalog/index.md) - The Catalog API allows for the discovery, creation, and integration of metadata.
+- [Data Quality](https://developer.sas.com/rest-apis/dataQuality/index.md) - The Data Quality API retrieves information about locales, functions, definitions, and tokens provided by a Quality Knowledge Base (QKB).
+- [Data Sources](https://developer.sas.com/rest-apis/dataSources/index.md) - The Data Sources API works in concert with the Data Tables and Row Sets APIs to navigate, reference, and retrieve data in the SAS Viya ecosystem.
+- [Data Tables](https://developer.sas.com/rest-apis/dataTables/index.md) - The Data Tables API works in concert with the Data Sources and Row Sets APIs to navigate, reference, and retrieve data in the SAS Viya ecosystem.
+- [Glossary](https://developer.sas.com/rest-apis/glossary/index.md) - The Glossary API allows users to associate business terms with technology assets such as data sets and columns, documents, and business rules.
+- [Relationships](https://developer.sas.com/rest-apis/relationships/index.md) - The Relationships API manages the storage and discovery of relationships, and the retrieval of networks of relationship data.
+- [Row Sets](https://developer.sas.com/rest-apis/rowSets/index.md) - The Row Sets API provides a common way to reference rows of rectangular data that are available in the SAS ecosystem.
+- [SAS Data and AI Studio Development](https://developer.sas.com/rest-apis/studioDevelopment/index.md) - API reference for SAS Data and AI Studio Development, including operations and machine-readable OpenAPI links.
+
+### CAS
+
+- [CAS Management](https://developer.sas.com/rest-apis/casManagement/index.md) - The CAS Management API enables users to manage and perform actions on common resources related to Cloud Analytic Services (CAS).
+- [CAS REST](https://developer.sas.com/rest-apis/cas/index.md) - The CAS REST API provides REST access to CAS functionality and server information, including CAS session management, running actions, and uploading data to the CAS server.
+
+### Fraud and Compliance
+
+- [Real-Time Watchlist Screening](https://developer.sas.com/rest-apis/watchlistScreening/index.md) - The Real-Time Watchlist Screening API supports screening party and payment information against lists of known or suspected parties that are involved in illegal activities, such as money laundering, terrorism financing, or other criminal behaviors.
+
+### Health and Life Sciences
+
+- [SAS Clinical Acceleration Repository](https://developer.sas.com/rest-apis/clinicalRepository/index.md) - The SAS Clinical Acceleration Repository API provides the necessary endpoints for managing the clinical repository.
+- [SAS Clinical Job Management](https://developer.sas.com/rest-apis/clinicalJobs/index.md) - The SAS Clinical Jobs Management API enables you to manage clinical job definitions and submit clinical jobs.
+
+### Generative AI
+
+- [SAS Retrieval Agent Manager](https://developer.sas.com/rest-apis/SASRetrievalAgentManager/index.md) - The Retrieval Agent Manager API enables users to query collections or agents for conversation and retrieve conversational responses.
+
+### Auto Machine Learning
+
+- [Machine Learning Pipeline Automation](https://developer.sas.com/rest-apis/mlPipelineAutomation/index.md) - The Machine Learning Pipeline Automation (MLPA) API enables CRUD operations on automation projects, which automates VDMML project creation, pipeline building and training, and the production of champion models.
+
+## CAS Programming
+
+- [CAS Actions programming page](https://developer.sas.com/programming/cas_actions) - CAS action usage and programming context.
+- [SAS Viya programming](https://developer.sas.com/programming/sas_viya_programming) - Hub page that includes CAS-related development workflows.
+
+## Developer Tools
+
+- [SDKs](https://developer.sas.com/sdk) - SDK landing page.
+- [CDN guide](https://developer.sas.com/guides/cdn) - Package delivery guidance for browser-based SDK use.
+- [VS Code extension](https://developer.sas.com/programming/vs_code_extension) - SAS extension entry point for VS Code users.
+- [Open source Python resources](https://developer.sas.com/open-source/python) - Python-oriented tools and references for SAS integrations.
+- [Open source R resources](https://developer.sas.com/open-source/r) - R-oriented tools and references for SAS integrations.
+- [Open source Java resources](https://developer.sas.com/open-source/java) - Java-oriented tools and references for SAS integrations.
+
+## Machine-Readable Indexes
+
+- [llms-full.txt](https://developer.sas.com/llms-full.txt) - Full catalog of every published API with spec links, cadences, and version history.
+- [Agent skills index](https://developer.sas.com/.well-known/agent-skills/index.json) - Discovery document listing task-oriented SKILL.md files for agents, covering API discovery, OAuth client registration, running SAS code, scoring models, and doc search.
+- [MCP server card](https://developer.sas.com/.well-known/mcp/server-card.json) - Descriptor for the SAS Viya MCP Server, which exposes SAS Viya analytics, models, and decisioning as governed tools for AI agents.
+- [API catalog](https://developer.sas.com/.well-known/api-catalog) - RFC 9727 machine-readable API catalog, also advertised via the Link response header.
+- [Public API categories endpoint](https://developer.sas.com/api/apis/categories?includeRelations=true) - Source endpoint used for automated API inventory generation.
+- [robots.txt](https://developer.sas.com/robots.txt) - Crawl policy and named AI bot directives.

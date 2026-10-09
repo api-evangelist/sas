@@ -10,12 +10,14 @@ description: >-
   and request rates are bounded by the deployment topology of the customer's
   Viya environment (CAS nodes, compute servers, and Kubernetes resources).
 limits:
-  - scope: deployment
+  - name: deployment
+    scope: deployment
     policy: deployment-scaled
     description: >-
       Throughput is governed by allocated compute, CAS workers, and
       Kubernetes resources. There is no published per-token rate ceiling.
-  - scope: oauth-token
+  - name: oauth-token
+    scope: oauth-token
     policy: token-expiry
     description: SAS Logon tokens expire and must be refreshed; expiration is configurable per deployment
 references:
