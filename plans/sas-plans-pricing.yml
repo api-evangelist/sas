@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 apiCommonsPlansVersion: '0.1'
 provider: sas
 name: SAS Viya Commercial Plans
@@ -35,3 +39,29 @@ plans:
 references:
   - https://www.sas.com/en_us/software/viya.html
   - https://developer.sas.com/
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: SAS Viya Free Trial
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: SAS Viya Subscription
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: SAS Customer Intelligence 360
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
