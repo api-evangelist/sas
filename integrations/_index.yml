@@ -27,38 +27,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: sas-lf-ai-data-landscape
-  label: LF AI & Data (Landscape)
-  partner: lf-ai-data
-  partner_name: LF AI & Data (Landscape)
-  category: AI & data landscape
-  type: register
-  channel: standard-directory
-  evidence: https://github.com/lfai/landscape/blob/95d361b8abfdd04a8c76bf38a012778d13621b5e/landscape.yml
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: LF AI & Data Landscape (github.com/lfai/landscape landscape.yml @95d361b8ab)
-    spec_file: null
-    standard: LF AI & Data
-    role: lfai-member (General)
-    registered_name: SAS Institute Inc.
-    registered_names:
-    - SAS Institute Inc.
-    website: https://sas.com/
-    matched_domain: sas.com
-    matched_by: domain
-    member_tier: General
-    hosting_company: false
-    lfai_projects: []
-    landscape_categories: []
-    landscape_entries: 0
-    signal_note: 'participation only: a landscape listing is standard-participant evidence, not depth. Entries,
-      categories, tier and projects are CONTEXT, never read (breadth is not credit)'
-    detected_by: sweep-mlops.py
-    detected: '2026-10-15'
-  status: not-a-workflow
-  arazzo: null
 - slug: sas-fedramp
   label: FedRAMP
   partner_name: FedRAMP
@@ -150,5 +118,50 @@
       of position shares
     detected_by: sweep-gov-cloud.py
     detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
+- slug: sas-lf-ai-data-landscape
+  label: LF AI & Data (Landscape)
+  partner: lf-ai-data
+  partner_name: LF AI & Data (Landscape)
+  category: AI & data landscape
+  type: register
+  channel: standard-directory
+  evidence: https://github.com/lfai/landscape/blob/3893e0631e1d12921a9b0ac25ffc78a2ac26239d/landscape.yml
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: LF AI & Data Landscape (github.com/lfai/landscape landscape.yml @3893e0631e)
+    spec_file: null
+    standard: LF AI & Data
+    role: lfai-member (General)
+    registered_name: SAS Institute Inc.
+    registered_names:
+    - SAS Institute Inc.
+    website: https://sas.com/
+    matched_domain: sas.com
+    matched_by: domain
+    member_tier: General
+    hosting_company: false
+    lfai_projects: []
+    landscape_categories: []
+    landscape_entries: 0
+    signal_note: 'participation only: a landscape listing is standard-participant evidence, not depth. Entries,
+      categories, tier and projects are CONTEXT, never read (breadth is not credit)'
+    detected_by: sweep-mlops.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: sas-eclipse-foundation-open-vsx
+  label: Eclipse Foundation (open-vsx)
+  partner: eclipse
+  partner_name: Eclipse Foundation (open-vsx)
+  category: IDE / developer extension marketplace listing
+  type: marketplace
+  marketplace: open-vsx
+  channel: partner-built
+  evidence: https://open-vsx.org/namespace/SAS
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
