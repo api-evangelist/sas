@@ -219,3 +219,33 @@
     detected: '2026-10-22'
   status: not-a-workflow
   arazzo: null
+- slug: sas-cran
+  label: CRAN
+  partner_name: CRAN
+  category: official SDK (R)
+  type: register
+  channel: package-registry
+  evidence: https://cran.r-project.org/package=sasctl
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: CRAN (packages.rds, the public package metadata table)
+    spec_file: null
+    language: R
+    packages:
+    - name: sasctl
+      version: 0.9.0
+      title: Easily Communicate Between the "SAS Viya" Platform and R
+      released: '2026-09-18'
+      released_field: Published
+      lapsed: false
+      page: https://cran.r-project.org/package=sasctl
+      repo_leg: github-org:sassoftware
+      publisher_leg: github-org:sassoftware
+      matched_by: github-org
+    current: true
+    signal_note: 'an official R package on CRAN: distribution, not an integration; lapsed = no release in 24 months'
+    detected_by: sweep-cran-r-packages.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
