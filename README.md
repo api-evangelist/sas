@@ -1,4 +1,4 @@
-# SAS Institute (sas)
+# SAS Institute
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,73 +66,189 @@
 
 SAS Institute is a global leader in analytics, AI, and data management software. SAS Viya, its cloud-native platform, exposes a comprehensive catalog of REST APIs covering data management, machine learning, decisions, reports, identities, and platform administration. The Viya REST API surface enables embedding analytics, automating model lifecycles, and integrating governed AI into business workflows.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/sas/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/sas/refs/heads/main/apis.yml)
+**Areas:** Analytics · Data Management · Artificial Intelligence · Machine Learning · Software
 
-## Scope
+## SAS Institute on APIs.io
 
-- **Type:** Index
+Everything profiled for SAS Institute is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/sas/](https://apis.io/providers/sas/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Analytics
-- Data Management
-- Artificial Intelligence
-- Machine Learning
-- Software
+- [SAS Institute CAS API](https://apis.io/apis/sas/sas-cas-api/) — The CAS API from SAS Institute — 1 operation(s) for cas.
+- [SAS Institute Decisions API](https://apis.io/apis/sas/sas-decisions-api/) — The Decisions API from SAS Institute — 2 operation(s) for decisions.
+- [SAS Institute Files API](https://apis.io/apis/sas/sas-files-api/) — The Files API from SAS Institute — 1 operation(s) for files.
+- [SAS Institute Folders API](https://apis.io/apis/sas/sas-folders-api/) — The Folders API from SAS Institute — 1 operation(s) for folders.
+- [SAS Institute Identities API](https://apis.io/apis/sas/sas-identities-api/) — The Identities API from SAS Institute — 2 operation(s) for identities.
+- [SAS Institute Jobs API](https://apis.io/apis/sas/sas-jobs-api/) — The Jobs API from SAS Institute — 2 operation(s) for jobs.
+- [SAS Institute Logon API](https://apis.io/apis/sas/sas-logon-api/) — The Logon API from SAS Institute — 1 operation(s) for logon.
+- [SAS Institute Models API](https://apis.io/apis/sas/sas-models-api/) — The Models API from SAS Institute — 2 operation(s) for models.
+- [SAS Institute Reports API](https://apis.io/apis/sas/sas-reports-api/) — The Reports API from SAS Institute — 2 operation(s) for reports.
+- [SAS Institute Business Rules API](https://apis.io/apis/sas/sas-business-rules-api/) — The Business Rules API from SAS Institute — 1 operation(s) for business rules.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-05
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### SAS Viya REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The SAS Viya REST API spans 50+ endpoint groups covering Cloud Analytic Services (CAS), Compute, Data Management (Data Sources, Data Tables, Data Quality), Model Management, Decisions, Business Rules, Reports, Visual Analytics, Identities, Authorization, Files, Folders, Jobs, and Logon (OAuth). Together they let developers automate SAS Viya analytic workloads, publish models, embed reports, and govern AI lifecycles.
+- [Sas Agentic Access](https://apis.io/agentic-access/sas/sas-agentic-access/)
 
-- **Human URL:** [https://developer.sas.com/apis/rest/](https://developer.sas.com/apis/rest/)
+#### JSON Schema (3)
 
-#### Tags
+The data models the API reads and writes.
 
-- Analytics
-- Machine Learning
-- Data Management
-- Decisions
+- [SAS Viya Decision](https://apis.io/schemas/sas/sas-viya-rest-api-decision/)
+- [SAS Viya Job](https://apis.io/schemas/sas/sas-viya-rest-api-job/)
+- [SAS Viya Report](https://apis.io/schemas/sas/sas-viya-rest-api-report/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://developer.sas.com/apis/rest/)
-- [A P I Catalog](https://developer.sas.com/rest-apis)
-- [SDK](https://developer.sas.com/sdk/)
-- [OpenAPI](openapi/sas-viya-rest-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/sas-viya-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/sas-viya-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/sas-viya-rest-api-job-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/sas-viya-rest-api-report-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/sas-viya-rest-api-decision-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/sas-viya-rest-api-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Sas Viya Rest Api Job Structure](https://apis.io/json-structure/sas/sas-viya-rest-api-job-structure/)
 
-- [GitHub Organization](https://github.com/sassoftware)
-- [LinkedIn](https://www.linkedin.com/company/sas)
+#### JSON-LD (2)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Sas Context](https://apis.io/jsonld/sas/sas-context/)
+- [Sas Viya Rest Api Context](https://apis.io/jsonld/sas/sas-viya-rest-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Sas Vocabulary](https://apis.io/vocabularies/sas/sas-vocabulary/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Sas Viya Rest Api Get Report Example](https://apis.io/examples/sas/sas-viya-rest-api-get-report-example/)
+- [Sas Viya Rest Api List Jobs Example](https://apis.io/examples/sas/sas-viya-rest-api-list-jobs-example/)
+
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [SAS Viya REST BusinessRules API](https://apis.io/collections/sas/open-sas-businessrules-api/)
+- [SAS Viya REST BusinessRules CAS API](https://apis.io/collections/sas/open-sas-cas-api/)
+- [SAS Viya REST BusinessRules Decisions API](https://apis.io/collections/sas/open-sas-decisions-api/)
+- [SAS Viya REST BusinessRules Files API](https://apis.io/collections/sas/open-sas-files-api/)
+- [SAS Viya REST BusinessRules Folders API](https://apis.io/collections/sas/open-sas-folders-api/)
+- [SAS Viya REST BusinessRules Identities API](https://apis.io/collections/sas/open-sas-identities-api/)
+- [SAS Viya REST BusinessRules Jobs API](https://apis.io/collections/sas/open-sas-jobs-api/)
+- [SAS Viya REST BusinessRules Logon API](https://apis.io/collections/sas/open-sas-logon-api/)
+- [SAS Viya REST BusinessRules Models API](https://apis.io/collections/sas/open-sas-models-api/)
+- [SAS Viya REST BusinessRules Reports API](https://apis.io/collections/sas/open-sas-reports-api/)
+- [SAS Viya REST API](https://apis.io/collections/sas/open-sas-viya-rest-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Sas Logon Api Overlay](https://apis.io/overlays/sas/sas-logon-api-overlay/)
+
+#### Governance rules (3)
+
+Spectral rulesets for the provider's contracts.
+
+- [SAS Institute — jsonschema rules](https://apis.io/rules/sas/sas-jsonschema-spectral-rules/)
+- [SAS Institute API Rules](https://apis.io/rules/sas/sas-rules/)
+- [SAS Institute API Rules](https://apis.io/rules/sas/sas-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Sas Authentication](https://apis.io/security/sas/sas-authentication/)
+- [Sas Domain Security](https://apis.io/security/sas/sas-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Sas Scopes](https://apis.io/scopes/sas/sas-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Sas Plans Pricing](https://apis.io/plans/sas/sas-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Sas Rate Limits](https://apis.io/rate-limits/sas/sas-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Sas Finops](https://apis.io/finops/sas/sas-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.sas.com/)
-- [Developer Portal](https://developer.sas.com/)
 - [Documentation](https://developer.sas.com/apis/rest/)
-- [A P I Catalog](https://developer.sas.com/rest-apis)
-- [SDK](https://developer.sas.com/sdk/)
-- [Getting Started](https://developer.sas.com/guides/get-started-rest-apis.html)
-- [Spectral Rules](rules/sas-spectral-rules.yml)
-- [Vocabulary](vocabulary/sas-vocabulary.yml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Plans](plans/sas-plans-pricing.yml)
-- [Rate Limits](rate-limits/sas-rate-limits.yml)
-- [Fin Ops](finops/sas-finops.yml)
+- [Getting started](https://developer.sas.com/guides/get-started-rest-apis.html)
+- [Blog](https://blogs.sas.com/content/feed/)
+- [GitHub](https://github.com/sassoftware)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 52.2 |
+| Contract governance | 31.8 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 7.9 |
+
+**Agent readiness 20.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/sas/](https://apis.io/providers/sas/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for SAS Institute: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/sas/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
